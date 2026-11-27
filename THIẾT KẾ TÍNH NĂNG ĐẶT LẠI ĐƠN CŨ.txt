@@ -1,0 +1,63 @@
+THIẾT KẾ TÍNH NĂNG ĐẶT LẠI ĐƠN CŨ
+ 
+BƯỚC 1: TÍNH TIỀN (GHI CHÚ)
+- Tiền món sau khi loại Trà đá: 2 x 48.000đ + 20.000đ = 116.000đ
+- Điều kiện giảm phí: 116.000đ >= 100.000đ nên được giảm 15.000đ phí giao hàng
+- Phí giao hàng sau giảm: 22.000đ - 15.000đ = 7.000đ
+- Tổng thanh toán: 116.000đ + 22.000đ - 15.000đ = 123.000đ
+ 
+BƯỚC 2: USER FLOW
+ 
+[1. Lịch sử đơn hàng: bấm nút "Đặt lại đơn"]
+                 |
+                 v
+[2. Hệ thống kiểm tra từng món của đơn cũ]
+                 |
+                 v
+          <Món còn hàng?>
+          /             \
+       HẾT              CÒN
+        |                |
+        v                v
+[3. Loại món khỏi   [4. Giữ món trong giỏ
+ giỏ, hiện thông     (đổi giá: hiện giá
+ báo hết hàng]       cũ + giá mới)]
+          \             /
+           v           v
+    [5. Màn hình "Xem lại giỏ"]
+ 
+BƯỚC 3: WIREFRAME MÀN HÌNH XEM LẠI GIỎ
+ 
++--------------------------------------------+
+| <-  Xem lại giỏ                            |
++--------------------------------------------+
+| (!) Trà đá đã hết hàng và được gỡ khỏi giỏ.|
++--------------------------------------------+
+| Quán Cơm Gà ShopeeFood                     |
+|                                            |
+| [Ảnh] Cơm gà x2                  96.000đ   |
+|       45.000đ(gạch ngang) -> 48.000đ/phần  |
+|       Giá đã đổi, quán tăng giá hôm nay    |
+|                                            |
+| [Ảnh] Nước cam x1                20.000đ   |
+|       20.000đ/ly (giá không đổi)           |
+|                                            |
+| Vì sao giá thay đổi? Xem trợ giúp          |
+|--------------------------------------------|
+| Chi tiết thanh toán                        |
+| Tiền món                         116.000đ  |
+| Phí giao hàng                     22.000đ  |
+| Giảm phí giao hàng               -15.000đ  |
+|--------------------------------------------|
+| Tổng thanh toán                  123.000đ  |
+|                                            |
+| +----------------------------------------+ |
+| |        Đặt đơn - 123.000đ              | |
+| +----------------------------------------+ |
++--------------------------------------------+
+ 
+Ghi chú thiết kế:
+- Nguyên tắc #1: có thông báo ở đầu màn hình, hiện giá cũ và giá mới của Cơm gà.
+- Nguyên tắc #10: có link "Vì sao giá thay đổi? Xem trợ giúp".
+- Nút Đặt đơn ở đáy cao 56dp (>= 48dp), ghi đúng tổng thanh toán 123.000đ.
+ 
